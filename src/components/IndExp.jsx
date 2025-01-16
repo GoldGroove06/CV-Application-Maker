@@ -10,7 +10,7 @@ function IndExp({state}) {
                     <div key={ind.studyTitle} style={{padding:10, border:"solid", margin:4}}>
                        {ind.compName}<br/>
                        {ind.positionTitle}<br/>
-                       {ind.responbilites}<br/>
+                       {ind.respo}<br/>
                        {ind.workDate}
                     </div>
                 )

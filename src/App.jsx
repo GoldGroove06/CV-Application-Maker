@@ -25,14 +25,14 @@ const initialState = {
     {
       compName: "bar",
       positionTitle: "manager",
-      responbilites:" x, y, z",
+      respo:" x, y, z",
       workDate: "2018-2022"
       
     },
     {
       compName: "boo",
       positionTitle: "junior dev",
-      responbilites:" x, y, z",
+      respo:" x, y, z",
       workDate: "2018-2022"
       
     }
@@ -42,6 +42,18 @@ const initialState = {
 };
 
 function reducer(state, action) {
+  switch(action.type){
+    case "persInfo":
+      return {...state, name: action.payload.name, email: action.payload.email, phoneNumber : action.payload.phone}
+
+     case "Exp":
+      return {...state, indExp: [{compName: action.payload.compName, positionTitle: action.payload.position, respo: action.payload.respo, workDate: action.payload.workDate}]}
+
+      case "EduBack":
+        return {...state, eduExp: [{instName: action.payload.instName, studyTitle: action.payload.studyTitle, studyDate: action.payload.studyDate}]}
+  
+    }
+
   return {...state}
 }
 
@@ -49,11 +61,11 @@ function App() {
 
   const [state, dispatch] = useReducer(reducer, initialState)
   return (
-    <>
-      
-      <Display state={state}/>
-      <Form />
-    </>
+    <div style={{display:"flex", flexDirection:"row"}}>
+         <Form dispatch={dispatch} state={state}/>
+      <Display state={state} />
+     
+    </div>
   )
 }
 
