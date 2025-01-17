@@ -1,18 +1,18 @@
 import { useState } from "react";
 
-function EduBack({dispatch}) {
+function EduBack({dispatch, el}) {
     const [instName, setInstName] = useState(null)
     const [studyTitle, setStudyTitle] = useState(null)
     const [studyDate, setStudyDate] = useState(null)
 
     function handleSubmit(e) {
         e.preventDefault()
-        dispatch({type: "EduBack", payload: {instName: instName, studyTitle:studyTitle, studyDate:studyDate}})
+        dispatch({type: "EduBack", payload: {id: el, instName: instName, studyTitle:studyTitle, studyDate:studyDate}})
     }
-
+   
     return (
         <div>
-            Education Background
+            
             <form onSubmit={handleSubmit}>
                 Institue Name: <input name="inst-name" type="text" onChange={(e) => setInstName(e.target.value) }/>
                 Study Title: <input name="study-title" type="text" onChange={(e) => setStudyTitle(e.target.value) }/>

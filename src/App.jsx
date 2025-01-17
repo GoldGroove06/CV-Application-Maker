@@ -9,49 +9,49 @@ const initialState = {
   phoneNumber: "1234567890",
   eduExp: [
     {
+      id:0,
       instName: "school of ---",
       studyTitle: "Post Grad",
       studyDate: "2022 - 2026"
 
-    },
-    {
-      instName: "faz",
-      studyTitle: "pre Grad",
-      studyDate: "2018-2022"
-      
     }
+    
   ],
   indExp: [
+
     {
+      id:0,
       compName: "bar",
       positionTitle: "manager",
       respo:" x, y, z",
       workDate: "2018-2022"
       
-    },
-    {
-      compName: "boo",
-      positionTitle: "junior dev",
-      respo:" x, y, z",
-      workDate: "2018-2022"
-      
     }
+    
   ]
 
 
 };
+function remover(object) {
+  console.log(object)
+   
+}
 
 function reducer(state, action) {
+  const dup = state.eduExp
   switch(action.type){
     case "persInfo":
       return {...state, name: action.payload.name, email: action.payload.email, phoneNumber : action.payload.phone}
 
-     case "Exp":
-      return {...state, indExp: [{compName: action.payload.compName, positionTitle: action.payload.position, respo: action.payload.respo, workDate: action.payload.workDate}]}
+      case "Exp":
+      return {...state, indExp: [{id:action.id, compName: action.payload.compName, positionTitle: action.payload.position, respo: action.payload.respo, workDate: action.payload.workDate}]}
 
       case "EduBack":
-        return {...state, eduExp: [{instName: action.payload.instName, studyTitle: action.payload.studyTitle, studyDate: action.payload.studyDate}]}
-  
+        
+        return {...state, eduExp: [...state.eduExp, {id:action.id, instName: action.payload.instName, studyTitle: action.payload.studyTitle, studyDate: action.payload.studyDate}]}
+
+      case "removeeduBack":
+        return {...state, eduExp: dup.filter(remover)}
     }
 
   return {...state}
