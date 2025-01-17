@@ -8,50 +8,36 @@ const initialState = {
   email: "eg@gh.com",
   phoneNumber: "1234567890",
   eduExp: [
-    {
-      id:0,
-      instName: "school of ---",
-      studyTitle: "Post Grad",
-      studyDate: "2022 - 2026"
-
-    }
+    
     
   ],
   indExp: [
 
-    {
-      id:0,
-      compName: "bar",
-      positionTitle: "manager",
-      respo:" x, y, z",
-      workDate: "2018-2022"
-      
-    }
+    
     
   ]
 
 
 };
-function remover(object) {
-  console.log(object)
-   
-}
+
 
 function reducer(state, action) {
-  const dup = state.eduExp
+  const dup  =[]
   switch(action.type){
     case "persInfo":
       return {...state, name: action.payload.name, email: action.payload.email, phoneNumber : action.payload.phone}
 
       case "Exp":
-      return {...state, indExp: [{id:action.id, compName: action.payload.compName, positionTitle: action.payload.position, respo: action.payload.respo, workDate: action.payload.workDate}]}
+      return {...state, indExp: [{id:action.payload.id, compName: action.payload.compName, positionTitle: action.payload.position, respo: action.payload.respo, workDate: action.payload.workDate}]}
 
       case "EduBack":
         
-        return {...state, eduExp: [...state.eduExp, {id:action.id, instName: action.payload.instName, studyTitle: action.payload.studyTitle, studyDate: action.payload.studyDate}]}
+        return {...state, eduExp: [...state.eduExp, {id:action.payload.id, instName: action.payload.instName, studyTitle: action.payload.studyTitle, studyDate: action.payload.studyDate}]}
 
       case "removeeduBack":
-        return {...state, eduExp: dup.filter(remover)}
+        console.log(dup.map(item => { if (item.id !== action.payload) return item} ))
+        state.eduExp.map(item => { if (item.id !== action.payload) dup.push(item)}  )
+        return {...state, eduExp: dup}
     }
 
   return {...state}

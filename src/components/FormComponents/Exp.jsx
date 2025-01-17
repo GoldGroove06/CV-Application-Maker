@@ -8,7 +8,7 @@ function Exp({dispatch, el}) {
 
     function handleSubmit(e) {
         e.preventDefault()
-        dispatch({type: "Exp", payload: {id: el,compName: compName, position: position, respo:respo, workDate: workDate}})
+        dispatch({type: "Exp", payload: {id: el, compName: compName, position: position, respo:respo, workDate: workDate}})
     }
     return (
         <div>

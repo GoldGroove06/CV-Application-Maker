@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 
 function Duplicator({component, dispatch, name}) {
-    const [counter, setCounter] = useState([1])
+    const [counter, setCounter] = useState([0])
 
     function handleClick(){
         const lastElement = counter.slice(-1)

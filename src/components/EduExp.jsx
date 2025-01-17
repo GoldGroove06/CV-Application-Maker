@@ -5,7 +5,7 @@ function EduExp({state}) {
         <div>
             Educational Exp 
             {state.eduExp.map((edu) => {
-                console.log(edu)
+      
                 return(
                     <div key={edu.studyTitle} style={{padding:10, border:"solid", margin:4}}>
                        {edu.instName}<br/>
