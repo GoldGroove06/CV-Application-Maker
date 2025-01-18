@@ -2,14 +2,12 @@ import  { any } from 'prop-types';
 
 function Header({state}) {
     return (
-        <div> 
+        <p> 
             
-            {state.name}
-            {state.email}
-            {state.phoneNumber}
+        {state.name} {state.email} {state.phoneNumber}
 
             
-        </div>
+        </p>
     );
 }
 

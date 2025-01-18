@@ -21,9 +21,9 @@ function EduBack({dispatch, el}) {
         <div>
             
             <form onSubmit={submited? handleEdit : handleSubmit}>
-                Institue Name: <input name="inst-name" type="text" onChange={(e) => setInstName(e.target.value) }/>
-                Study Title: <input name="study-title" type="text" onChange={(e) => setStudyTitle(e.target.value) }/>
-                Study Date: <input name="studyDate" type="text" onChange={(e) => setStudyDate(e.target.value) }/>
+                Institue Name: <input name="inst-name" type="text" onChange={(e) => setInstName(e.target.value) }/> <br/>
+                Study Title: <input name="study-title" type="text" onChange={(e) => setStudyTitle(e.target.value) }/> <br/>
+                Study Date: <input name="studyDate" type="text" onChange={(e) => setStudyDate(e.target.value) }/> <br/>
                 <input type="submit" value={submited ? 'edit' : "Add info"}/>
             </form>
         </div>

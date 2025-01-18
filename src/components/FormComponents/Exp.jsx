@@ -22,10 +22,10 @@ function Exp({dispatch, el}) {
         <div>
             
             <form onSubmit={submited? handleEdit : handleSubmit}>
-                Company Name: <input name="comp-name" type="text" onChange={(e) => setCompName(e.target.value) }/>
-                Position : <input name="position" type="text" onChange={(e) => setPosition(e.target.value) }/>
-                Responbilities: <input name="respo" type="text" onChange={(e) => setRespo(e.target.value) }/>
-                Work Date: <input name="workDate" type="text" onChange={(e) => setWorkDate(e.target.value) }/>
+                Company Name: <input name="comp-name" type="text" onChange={(e) => setCompName(e.target.value) }/> <br/>
+                Position : <input name="position" type="text" onChange={(e) => setPosition(e.target.value) }/> <br/>
+                Responbilities: <input name="respo" type="text" onChange={(e) => setRespo(e.target.value) }/> <br/>
+                Work Date: <input name="workDate" type="text" onChange={(e) => setWorkDate(e.target.value) }/> <br/>
                 <input type="submit" value={submited ? 'edit' : "Add info"}/>
             </form>
         </div>

@@ -7,12 +7,13 @@ import PersonalInfo from "./FormComponents/PersonalInfo";
 
 function Form({dispatch}) {
     return (
-        <div>
+        <div style={{ flex:1}}>
             <PersonalInfo dispatch={dispatch} />
+            <br/>
             Education Background
             <Duplicator component={<EduBack dispatch={dispatch} /> } dispatch={dispatch} name='eduBack'>
             </Duplicator>
-
+            <br/>
             Experience
             <Duplicator component={<Exp dispatch={dispatch} />} dispatch={dispatch} name="exp"/>
                 

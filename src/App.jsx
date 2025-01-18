@@ -43,9 +43,12 @@ function reducer(state, action) {
       return {...state, eduExp:state.eduExp.map((i) => i.id === action.payload.id ? {id:action.payload.id, instName: action.payload.instName, studyTitle: action.payload.studyTitle, studyDate: action.payload.studyDate} : i)}
 
     case "removeeduBack":
-      console.log(dup.map(item => { if (item.id !== action.payload) return item} ))
       state.eduExp.map(item => { if (item.id !== action.payload) dup.push(item)}  )
       return {...state, eduExp: dup}
+    
+    case "removeexp":
+      state.eduExp.map(item => { if (item.id !== action.payload) dup.push(item)}  )
+        return {...state, indExp: dup}
     }
 
   return {...state}
@@ -56,7 +59,7 @@ function App() {
   const [state, dispatch] = useReducer(reducer, initialState)
   return (
     <div style={{display:"flex", flexDirection:"row"}}>
-         <Form dispatch={dispatch} state={state}/>
+         <Form dispatch={dispatch} />
       <Display state={state} />
      
     </div>

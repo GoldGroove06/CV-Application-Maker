@@ -21,9 +21,9 @@ function PersonalInfo({dispatch}) {
         <div>
             Personal details
             <form onSubmit={submited? handleEdit : handleSubmit}>
-                Name: <input name="name" type="text" onChange={(e) => setName(e.target.value) }/>
-                Email: <input name="email" type="email" onChange={(e) => setEmail(e.target.value) }/>
-                Phone number: <input name="ph-number" type="tel" onChange={(e) => setPhone(e.target.value) }/>
+                Name: <input name="name" type="text" onChange={(e) => setName(e.target.value) }/> <br/>
+                Email: <input name="email" type="email" onChange={(e) => setEmail(e.target.value) }/> <br/>
+                Phone number: <input name="ph-number" type="tel" onChange={(e) => setPhone(e.target.value) }/> <br/>
                 <input type="submit" value={submited ? 'edit' : "Add info"}/>
             </form>
         </div>
