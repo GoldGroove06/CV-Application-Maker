@@ -27,17 +27,25 @@ function reducer(state, action) {
     case "persInfo":
       return {...state, name: action.payload.name, email: action.payload.email, phoneNumber : action.payload.phone}
 
-      case "Exp":
+    case "editpersInfo":
+        return {...state, name: action.payload.name, email: action.payload.email, phoneNumber : action.payload.phone}
+
+    case "Exp":
       return {...state, indExp: [{id:action.payload.id, compName: action.payload.compName, positionTitle: action.payload.position, respo: action.payload.respo, workDate: action.payload.workDate}]}
 
-      case "EduBack":
-        
-        return {...state, eduExp: [...state.eduExp, {id:action.payload.id, instName: action.payload.instName, studyTitle: action.payload.studyTitle, studyDate: action.payload.studyDate}]}
+    case "EduBack":  
+      return {...state, eduExp: [...state.eduExp, {id:action.payload.id, instName: action.payload.instName, studyTitle: action.payload.studyTitle, studyDate: action.payload.studyDate}]}
 
-      case "removeeduBack":
-        console.log(dup.map(item => { if (item.id !== action.payload) return item} ))
-        state.eduExp.map(item => { if (item.id !== action.payload) dup.push(item)}  )
-        return {...state, eduExp: dup}
+    case "editExp":
+      return {...state, indExp:state.indExp.map((i) => i.id === action.payload.id ? {id:action.payload.id, compName: action.payload.compName, positionTitle: action.payload.position, respo: action.payload.respo, workDate: action.payload.workDate} : i)}
+
+    case "editEduBack":
+      return {...state, eduExp:state.eduExp.map((i) => i.id === action.payload.id ? {id:action.payload.id, instName: action.payload.instName, studyTitle: action.payload.studyTitle, studyDate: action.payload.studyDate} : i)}
+
+    case "removeeduBack":
+      console.log(dup.map(item => { if (item.id !== action.payload) return item} ))
+      state.eduExp.map(item => { if (item.id !== action.payload) dup.push(item)}  )
+      return {...state, eduExp: dup}
     }
 
   return {...state}

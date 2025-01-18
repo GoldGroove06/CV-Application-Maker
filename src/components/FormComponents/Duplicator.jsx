@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import PropTypes from 'prop-types';
-
 
 function Duplicator({component, dispatch, name}) {
     const [counter, setCounter] = useState([0])
@@ -12,6 +10,8 @@ function Duplicator({component, dispatch, name}) {
 
     function handleRemove(id){
         dispatch({type:`remove${name}`, payload:id})
+        const list = counter
+        setCounter(list.filter((i) => i !== id))
     }
     return (
         <div>
