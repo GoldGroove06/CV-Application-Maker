@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Button from "@radui/ui/Button"
 
 function Exp({dispatch, el}) {
     const [compName, setCompName] = useState(null)
@@ -26,7 +27,7 @@ function Exp({dispatch, el}) {
                 Position : <input name="position" type="text" onChange={(e) => setPosition(e.target.value) }/> <br/>
                 Responbilities: <input name="respo" type="text" onChange={(e) => setRespo(e.target.value) }/> <br/>
                 Work Date: <input name="workDate" type="text" onChange={(e) => setWorkDate(e.target.value) }/> <br/>
-                <input type="submit" value={submited ? 'edit' : "Add info"}/>
+                <Button type="submit" >{submited ? 'edit' : "Add info"}</Button>
             </form>
         </div>
     );

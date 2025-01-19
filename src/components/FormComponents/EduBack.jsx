@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Button from "@radui/ui/Button"
 
 function EduBack({dispatch, el}) {
     const [instName, setInstName] = useState(null)
@@ -24,7 +25,7 @@ function EduBack({dispatch, el}) {
                 Institue Name: <input name="inst-name" type="text" onChange={(e) => setInstName(e.target.value) }/> <br/>
                 Study Title: <input name="study-title" type="text" onChange={(e) => setStudyTitle(e.target.value) }/> <br/>
                 Study Date: <input name="studyDate" type="text" onChange={(e) => setStudyDate(e.target.value) }/> <br/>
-                <input type="submit" value={submited ? 'edit' : "Add info"}/>
+                <Button type="submit" >{submited ? 'edit' : "Add info"}</Button>
             </form>
         </div>
     );

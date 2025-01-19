@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Button from "@radui/ui/Button"
 
 function PersonalInfo({dispatch}) {
     const [name, setName] = useState(null)
@@ -19,12 +20,11 @@ function PersonalInfo({dispatch}) {
     }
     return (
         <div>
-            Personal details
             <form onSubmit={submited? handleEdit : handleSubmit}>
                 Name: <input name="name" type="text" onChange={(e) => setName(e.target.value) }/> <br/>
                 Email: <input name="email" type="email" onChange={(e) => setEmail(e.target.value) }/> <br/>
                 Phone number: <input name="ph-number" type="tel" onChange={(e) => setPhone(e.target.value) }/> <br/>
-                <input type="submit" value={submited ? 'edit' : "Add info"}/>
+                <Button type="submit" >{submited ? 'edit' : "Add info"}</Button>
             </form>
         </div>
     );

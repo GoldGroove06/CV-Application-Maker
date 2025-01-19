@@ -4,9 +4,9 @@ import Display from './components/Display'
 import Form from './components/Form';
 
 const initialState = {
-  name: "Arshpreet Singh",
-  email: "eg@gh.com",
-  phoneNumber: "1234567890",
+  name: "",
+  email: "",
+  phoneNumber: "",
   eduExp: [
     
     
@@ -58,6 +58,7 @@ function reducer(state, action) {
 function App() {
 
   const [state, dispatch] = useReducer(reducer, initialState)
+  console.log(state)
   return (
     <div style={{display:"flex", flexDirection:"row"}} className='max-h-screen sticky top-0'>
          <Form dispatch={dispatch} />

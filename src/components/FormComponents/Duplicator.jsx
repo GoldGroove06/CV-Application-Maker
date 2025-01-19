@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Button from "@radui/ui/Button"
 
 function Duplicator({component, dispatch, name}) {
     const [counter, setCounter] = useState([0])
@@ -15,13 +16,13 @@ function Duplicator({component, dispatch, name}) {
     }
     return (
         <div>
-            <button onClick={handleClick}>Add new</button>
+            <Button onClick={handleClick}>Add new</Button>
             {counter.map(
                 (el) => {
                     
                     return <div key={el} style={{padding:10, border:"solid", margin:4}}>
                          {React.cloneElement(component, {el})}
-                         <button onClick={() => handleRemove(el)}>Remove</button>
+                         <Button onClick={() => handleRemove(el)}>Remove</Button>
                     </div>
                 }
             )}

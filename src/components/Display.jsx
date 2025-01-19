@@ -6,7 +6,7 @@ import IndExp from './DisplayComponents/IndExp';
 function Display({state}) {
    
     return (
-        <p style={{ flex:2}} className='bg-green-900'>
+        <p style={{ flex:2}} className='h-screen ml-4'>
             <Header state={state}/>
             <br></br>
             <EduExp state={state}/>
