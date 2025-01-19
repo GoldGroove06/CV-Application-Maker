@@ -1,16 +1,19 @@
 import { any } from 'prop-types';
+import Separator from "@radui/ui/Separator"
 
 function EduExp({state}) {
     return (
-        <div>
+        <div className='font-bold'>
+            <Separator/> 
             Educational Exp 
             {state.eduExp.map((edu) => {
       
                 return(
-                    <div key={edu.studyTitle} style={{padding:10, border:"solid", margin:4}}>
-                       {edu.instName}<br/>
-                       {edu.studyTitle}<br/>
-                       {edu.studyDate}
+                    <div key={edu.studyTitle} className='m-4 font-semibold p-4'>
+                       <div className='float-start '>{edu.instName}</div><div className='float-end'> {edu.studyDate}</div>
+                       <br/>
+                       <div className='font-light'>{edu.studyTitle}</div>
+                       
                     </div>
                 )
             })}

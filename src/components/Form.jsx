@@ -7,7 +7,7 @@ import PersonalInfo from "./FormComponents/PersonalInfo";
 
 function Form({dispatch}) {
     return (
-        <div style={{ flex:1}}>
+        <div style={{ flex:1}} className="overflow-scroll overflow-x-hidden">
             <PersonalInfo dispatch={dispatch} />
             <br/>
             Education Background

@@ -1,13 +1,17 @@
 import  { any } from 'prop-types';
 
+import Separator from "@radui/ui/Separator"
+
+
 function Header({state}) {
     return (
-        <p> 
+        <div > 
+        CV <Separator/>         
+        <div className='flex'>
+        {state.name}  <Separator orientation="vertical" /> {state.email}  <Separator orientation="vertical" />{state.phoneNumber}
+        </div>  
             
-        {state.name} {state.email} {state.phoneNumber}
-
-            
-        </p>
+        </div>
     );
 }
 
